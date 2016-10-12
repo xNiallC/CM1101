@@ -186,8 +186,9 @@ def menu(exits):
     while True:
         print_menu(exits)
         roominput = input()
-        if is_valid_exit(exits, roominput) == True:
-            return roominput
+        fixedinput = normalise_input(roominput)
+        if is_valid_exit(exits, fixedinput) == True:
+            return fixedinput
         else:
             print("\n" + "That direction is invalid." + "\n")
         #normalise_input(roominput)
