@@ -80,9 +80,6 @@ def normalise_input(user_input):
     ['go', 'passage', 'south']
 
     """
-    # Remove punctuation and convert to lower case
-    no_punct = remove_punct(user_input).lower()
-
-    #
-    # COMPLETE ME!
-    #
+    user_input = remove_punct(user_input).lower()
+    user_input = filter_words(user_input.split(" "), skip_words)
+    return user_input
